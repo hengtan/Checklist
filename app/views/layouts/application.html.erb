@@ -5,10 +5,42 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 </head>
-<body>
+  <body>
+
+        <nav class="navbar navbar-default">
+          <div class="container">
+            <div class="navbar-header">
+              <%= link_to "Checklist", root_path, class: "navbar-brand" %>
+            </div>
+            <ul class="nav navbar-nav">
+              <li>
+                <%= link_to "Sign up", new_user_registration_path %>
+                <% if current_user.present? %>
+              </li>
+              <li>
+                  <%= link_to "Sign OUt", destroy_user_session_path,  method: :delete%>
+                  <% else %>
+              </li>
+              <li>
+                  <%= link_to "Log in", new_user_session_path %>
+                <% end %>
+              </li>
+            </ul>
+            <% if user_signed_in? %>
+              <%= link_to "New Item", new_item_path, class: "navbar-text navbar-link navbar-right" %>
+              <% end %>
+            </div>
+          </nav>
+
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<div class="container">
 
 <%= yield %>
 
-</body>
+</div>
+  </body>
 </html>

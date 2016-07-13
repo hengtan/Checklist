@@ -1,8 +1,10 @@
 source 'https://rubygems.org'
 
-gem 'simple_form', '~> 3.2', '>= 3.2.1'
+gem 'simple_form', '~> 3.1.0'
 gem 'bootstrap-sass', '~>3.3.4.1'
+gem 'devise', '~> 4.2'
 gem 'rails', '4.2.6'
+gem 'font-awesome-sass'
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
